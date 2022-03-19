@@ -1,0 +1,22 @@
+export const fakeNFTData=[{
+    image:'./assets/9a3e5a44e305083c276ec80a73a67e24.png',
+},
+{
+    image:'./assets/116a3b087dbbf386ca405ce7c211cac7.png',
+},
+{
+    image:'./assets/1504257d3ffcc1618cebaa9d7c434e81.png',
+},
+{
+    image:'./assets/b5bf437cac0980dbf606ae1b0cff9da1.png',
+},
+{
+    image:'./assets/9a3e5a44e305083c276ec80a73a67e24.png',
+},
+{
+    image:'./assets/9a3e5a44e305083c276ec80a73a67e24.png',
+},
+{
+    image:'./assets/9a3e5a44e305083c276ec80a73a67e24.png',
+},
+]
