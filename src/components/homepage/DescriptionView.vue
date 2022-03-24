@@ -35,7 +35,7 @@ export default {
   justify-content: center;
 }
 .artist > p {
-  margin: 10px 15%;
+  margin: 10px 25%;
 }
 .readMore {
   color: #50b1b5;

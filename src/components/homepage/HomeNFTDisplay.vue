@@ -7,13 +7,13 @@
         href="#"
         v-on:click="checkActive('item')"
         :class="{ active: itemActive }"
-        >Items</a
+        >{{ itemsValue.leftOne }}</a
       >
       <a
         href="#"
         v-on:click="checkActive('activity')"
         :class="{ active: activityActive }"
-        >Activity</a
+        >{{ itemsValue.rightOne }}</a
       >
     </div>
 
@@ -23,7 +23,7 @@
         <div class="nftContent_data">
           <div class="nftContent_dataInsight">
             <p>Artwork</p>
-            <p>by<b> artist name</b></p>
+            <p class="nftContent-dataInsightChild">By<b> artist name</b></p>
           </div>
           <div class="nftContent_dataInsight">
             <p>20.5Tx</p>
@@ -51,6 +51,7 @@ export default {
     return {
       mobileNFTs: [], // You may use this to display limited NFTs
       activityActive: false,
+      itemsValue: { leftOne: "", rightOne: "" },
       itemActive: true,
       fakeNFTdata: [
         {
@@ -155,8 +156,11 @@ export default {
       if (window.innerWidth <= 600) {
         // do something
         this.nfts = this.fakeNFTdata.slice(0, 3);
+        this.itemsValue = { leftOne: "List Name", rightOne: "List Name" };
       } else if (window.innerWidth > 600) {
         // do something
+        this.itemsValue = { leftOne: "Items", rightOne: "Activity" };
+
         this.nfts = this.fakeNFTdata;
       }
     },
@@ -230,11 +234,15 @@ export default {
   margin: 1.5rem;
   padding-bottom: 10px;
 }
+.nftContent-dataInsightChild {
+  font-size: 12px;
+}
 .nftSection > a {
   text-decoration: none;
   margin: 2rem 1rem;
   margin-bottom: 0;
-  color: gray;
+  color: black;
+  font-weight: 400;
 }
 
 .nftContent_data {
@@ -242,7 +250,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   text-align: left;
-  margin: 10px 13%;
+  margin: -1rem 13% 3rem 13%;
   margin-top: -1rem;
 }
 .nftContent_dataInsight {
@@ -253,14 +261,14 @@ export default {
   margin: 0;
 }
 .nftImage > .manzoor > img {
-  width: 100%;
-  padding-left: 2px;
+  width: 110%;
+  margin-left: -10px;
 }
 .nftImage {
   margin: 1rem 1rem;
   background: #efefef;
   border-radius: 25px;
-  width: 30%;
+  width: 20%;
 }
 .bottom > p {
   font-size: 32px;
@@ -276,23 +284,28 @@ export default {
   background: #edf7f7;
   color: #5fbdc1;
 }
+.bottom_active {
+  background: #5fbdc1 !important;
+  color: white !important;
+}
 .active,
 .bottom_handles > button .active {
   border-bottom: 2px solid skyblue;
-  font-weight: bold;
+  font-weight: bold !important;
   color: skyblue !important;
 }
 .active {
   padding-bottom: 10px;
+  font-weight: bold;
 }
-.bottom_handles > button:active,
-.bottom_handles > button:visited,
-.bottom_handles > button:focus {
-  background: #5fbdc1;
-  color: white;
-}
-@media only screen and (max-width: 350px) {
-  .nftImage > .manzoor > img {
+
+
+@media only screen and (max-width: 1050px) {
+  .nftImage {
+    width: 27%;
+  }
+  .nftContent_data {
+    font-size: 13px;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -300,7 +313,7 @@ export default {
     width: 75%;
   }
   .nftContent_data {
-    font-size: 18px;
+    font-size: 21px;
   }
   .bottom_handles {
     display: flex;
@@ -310,6 +323,19 @@ export default {
   }
   .bottom_handles > button {
     margin-bottom: 1rem;
+  }
+  .nftSection {
+    display: flex;
+    justify-content: space-around;
+    font-size: 21px;
+    padding-bottom: 0px !important;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .nftImage > .manzoor > img {
+  }
+  .nftContent_data {
+    font-size: 18px;
   }
 }
 </style>

@@ -14,8 +14,8 @@
       <div class="mainNavbar">
         <ul>
           <img :src="logo" alt="risidio-logo" />
-          <li class="nav-item">Gallery</li>
-          <li class="nav-item">
+          <li class="nav-item bold">Gallery</li>
+          <li class="nav-item bold">
             Featured Collections<img
               src="../../assets/caretDown.svg"
               alt=""
@@ -50,13 +50,25 @@
         </ul>
         <div class="mobileNavbar_topOptions">
           <a href="#" disabled class="mobileNavbar_topOptions_dark">Gallery</a>
-          <a href="#" disabled class="mobileNavbar_topOptions_dask"
+          <a href="#" disabled class="mobileNavbar_topOptions_dark"
             >Collection</a
           >
           <br />
-          <hr style="border-bottom: 1px; width: 100%" />
+          <hr
+            style="
+              border-bottom: 1px;
+              opacity: 0.4;
+              width: 100%;
+              margin: 4rem 0;
+            "
+          />
           <a href="#" class="mobileNavbar_topOptions_light">how it works</a>
-          <a href="#" class="mobileNavbar_topOptions_light">About Risidio</a>
+          <a
+            href="#"
+            class="mobileNavbar_topOptions_light"
+            style="margin-bottom: 4rem"
+            >About Risidio</a
+          >
 
           <br />
           <button>Register with Hiro wallet</button>
@@ -88,6 +100,9 @@ export default {
   margin: 0 50px 50px 50px;
   margin: 0;
 }
+.bold {
+  font-weight: 600;
+}
 .mainNavbar ul {
   display: flex;
   flex-direction: row;
@@ -101,9 +116,9 @@ export default {
   background: #423d95;
   color: #5fbdc1 !important;
   font-weight: bold;
-  border-radius: 16px;
+  border-radius: 22px;
   width: 120px;
-  padding: 0.5rem;
+  padding: 0.8rem 0.5rem;
 }
 
 @media only screen and (max-width: 750px) {
@@ -145,11 +160,11 @@ export default {
 }
 .mobileNavbar_topOptions > button {
   background: #493d93;
-  border-radius: 18px;
+  border-radius: 35px;
   width: 90%;
   margin: 0 auto;
   color: #5db0bb;
-  height: 45px;
+  height: 65px;
   border: none;
   margin-bottom: 2rem;
   font-weight: bold;

@@ -6,7 +6,7 @@
         <h5>2,835 STX</h5>
       </div>
       <div class="data_header_item border">
-        <p>Owner</p>
+        <p>Owners</p>
         <h5>1,236</h5>
       </div>
       <div class="data_header_item">
@@ -34,19 +34,30 @@ export default {
 .data_header_item {
   padding: 0rem 1.5rem;
   width: 33.33%;
-  height: 90px;
+  height: 72px;
 }
 .data_header_content {
   display: flex;
   flex-direction: row;
-  width: 65%;
+  width: 50%;
   background: #f9f9f9;
   border-radius: 25px;
   margin: 2rem 0;
+  height: 93px;
+}
+@media only screen and (max-width: 880px) {
+  .data_header_content {
+    height: 100px;
+  }
+  .data_header_item {
+    padding: 0;
+  }
 }
 @media only screen and (max-width: 750px) {
   .data_header_content {
     width: 50%;
+    height: auto;
+    width: 260px;
   }
   .border {
     border: 0;
@@ -60,11 +71,6 @@ export default {
 
   .data_header_content {
     flex-direction: column;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .data_header_content {
-    width: 70%;
   }
 }
 </style>
